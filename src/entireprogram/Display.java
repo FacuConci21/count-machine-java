@@ -2,10 +2,12 @@ package entireprogram;
 
 public class Display {
 
+    /*  ATTRIBUTES  */
     private final int screenBuffWidth = 50;
     private final int screenBuffHeight = 20;
     private final char[] screenBuffer;
 
+    /*  CONSTRUCTORS    */
     public Display() {
         this.screenBuffer = new char[this.screenBuffWidth*this.screenBuffHeight];
         for (int i = 0; i < (this.screenBuffWidth*this.screenBuffHeight); i++) {
@@ -13,12 +15,14 @@ public class Display {
         }
     }
 
+    /*  PUBLIC STATICS METHODS     */
     public static void addSpriteSuccessive(Sprite [] spritesList, Display outerScreenDisplay) {
         for (int i = 0; i < spritesList.length; i++) {
             outerScreenDisplay.addSprite(spritesList[i]);
         }
     }
 
+    /*  PUBLIC METHODS     */
     public void addSprite(Sprite sprite) {
         int     spriteInitialX = sprite.getInitialCoordX(),
                 spriteInitialY = sprite.getInitialCoordY(),

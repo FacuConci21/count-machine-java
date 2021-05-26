@@ -6,18 +6,18 @@ public class CountMachine {
 
     public static int mainLoopProgram() {
 
-        Sprite mySprite = new Sprite(10, 5);
-
-        Sprite[] spritesList = {
-                new Sprite(10, 5),
-                new Sprite(20, 16),
-                new Sprite(34, 2),
-        };
-
+        /*  LOCALS     */
+        char [] cellsShape = {'+', '-', '+', '|', ' ', '|', '+', '-', '+'};
         Display screenDisplay = new Display();
+        RectangleCell [] rectangleCellsCollection = new RectangleCell[1];
 
-        //screenDisplay.addSprite(mySprite);
-        Display.addSpriteSuccessive(spritesList, screenDisplay);
+
+        /*  INITIALIZATIONS     */
+        rectangleCellsCollection[0] = new RectangleCell(cellsShape, 4, 4);
+
+
+        /*  DISPLAY     */
+        screenDisplay.addSprite(rectangleCellsCollection[0].getRectSprite());
 
         screenDisplay.writeConsoleOutput();
 

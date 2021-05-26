@@ -2,11 +2,13 @@ package entireprogram;
 
 public class Sprite {
 
+    /*  ATTRIBUTES  */
     private int initialCoordX = 0;
     private int initialCoordY = 0;
     private char [] map;
     private int sqrtMapLength;
 
+    /*  CONSTRUCTORS    */
     public Sprite() {
         this.map = new char[9];
         for (int i = 0; i < 9; i++) {
@@ -43,11 +45,12 @@ public class Sprite {
         this.map = new char[map.length];
 
         for (int i = 0; i < map.length; i++) {
-            this.map[i] = 'x';
+            this.map[i] = map[i];
         }
         sqrtMapLength = (int) Math.sqrt(this.map.length);
     }
 
+    /*  PUBLIC METHODS     */
     public int getInitialCoordX() {
         return this.initialCoordX;
     }
