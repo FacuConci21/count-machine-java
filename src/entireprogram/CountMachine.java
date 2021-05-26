@@ -10,6 +10,7 @@ public class CountMachine {
         char [] cellsShape = {'+', '-', '+', '|', ' ', '|', '+', '-', '+'};
         Display screenDisplay = new Display();
         RectangleCell [] rectangleCellsCollection = new RectangleCell[1];
+        Digit digit = new Digit(10);
 
 
         /*  INITIALIZATIONS     */

@@ -4,7 +4,7 @@ public class Display {
 
     /*  ATTRIBUTES  */
     private final int screenBuffWidth = 50;
-    private final int screenBuffHeight = 20;
+    private final int screenBuffHeight = 10;
     private final char[] screenBuffer;
 
     /*  CONSTRUCTORS    */
