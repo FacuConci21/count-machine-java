@@ -66,4 +66,8 @@ public class Sprite {
     public char[] getMap() {
         return this.map;
     }
+
+    public void insertChar(char element, int index) {
+        this.map[index] = element;
+    }
 }

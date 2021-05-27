@@ -14,7 +14,8 @@ public class CountMachine {
 
 
         /*  INITIALIZATIONS     */
-        rectangleCellsCollection[0] = new RectangleCell(cellsShape, 4, 4);
+        //rectangleCellsCollection[0] = new RectangleCell(cellsShape, 4, 4);
+        rectangleCellsCollection[0] = new RectangleCell(0,10,4,4, cellsShape);
 
 
         /*  DISPLAY     */
