@@ -64,5 +64,9 @@ public class RectangleCell {
         return this.rectSprite;
     }
 
-
+    public boolean incrementDigitValue() {
+        boolean r = this.digit.incrementValue();
+        this.updateRectSprite();
+        return r;
+    }
 }

@@ -40,6 +40,19 @@ public class Display {
         }
     }
 
+    public void clearScreenConsole() {
+        ProcessBuilder clearScreenProcess = new ProcessBuilder();
+
+        try {
+            clearScreenProcess.command("cls");
+            clearScreenProcess.inheritIO();
+            clearScreenProcess.start();
+            clearScreenProcess.wait();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+    }
     public void writeConsoleOutput() {
         for (int i = 0; i < this.screenBuffHeight ; i++) {
             for (int j = 0; j < this.screenBuffWidth; j++) {

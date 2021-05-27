@@ -1,5 +1,9 @@
 package entireprogram;
 
+import com.sun.deploy.uitoolkit.ui.ConsoleWindow;
+
+import java.io.Console;
+
 public class CountMachine {
 
     public CountMachine() {}
@@ -8,20 +12,25 @@ public class CountMachine {
 
         /*  LOCALS     */
         char [] cellsShape = {'+', '-', '+', '|', ' ', '|', '+', '-', '+'};
+        boolean rectsCellsCollectionFilled = false;
         Display screenDisplay = new Display();
-        RectangleCell [] rectangleCellsCollection = new RectangleCell[1];
-        Digit digit = new Digit(10);
-
+        RectangleCell [] rectangleCellsCollection = new RectangleCell[8];
 
         /*  INITIALIZATIONS     */
         //rectangleCellsCollection[0] = new RectangleCell(cellsShape, 4, 4);
         rectangleCellsCollection[0] = new RectangleCell(0,10,4,4, cellsShape);
 
 
-        /*  DISPLAY     */
-        screenDisplay.addSprite(rectangleCellsCollection[0].getRectSprite());
+        while (!rectsCellsCollectionFilled) {
 
-        screenDisplay.writeConsoleOutput();
+            rectsCellsCollectionFilled = rectangleCellsCollection[0].incrementDigitValue();
+
+            screenDisplay.addSprite(rectangleCellsCollection[0].getRectSprite());
+
+            /*  DISPLAY     */
+            screenDisplay.writeConsoleOutput();
+
+        }
 
         return 0;
     }
