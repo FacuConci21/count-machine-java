@@ -20,7 +20,11 @@ public class CountMachine {
         //rectangleCellsCollection[0] = new RectangleCell(cellsShape, 4, 4);
         rectangleCellsCollection[0] = new RectangleCell(0,10,4,4, cellsShape);
 
+        /*  FIRST EXECUTION     */
+        screenDisplay.addSprite(rectangleCellsCollection[0].getRectSprite());
+        screenDisplay.writeConsoleOutput();
 
+        /*  MAIN LOOP       */
         while (!rectsCellsCollectionFilled) {
 
             rectsCellsCollectionFilled = rectangleCellsCollection[0].incrementDigitValue();
@@ -28,6 +32,7 @@ public class CountMachine {
             screenDisplay.addSprite(rectangleCellsCollection[0].getRectSprite());
 
             /*  DISPLAY     */
+            screenDisplay.clearScreenConsole();
             screenDisplay.writeConsoleOutput();
 
         }

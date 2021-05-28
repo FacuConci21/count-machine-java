@@ -1,5 +1,7 @@
 package entireprogram;
 
+import java.io.IOException;
+
 public class Display {
 
     /*  ATTRIBUTES  */
@@ -40,18 +42,30 @@ public class Display {
         }
     }
 
-    public void clearScreenConsole() {
-        ProcessBuilder clearScreenProcess = new ProcessBuilder();
+    public void clearScreenConsole()  {
 
-        try {
-            clearScreenProcess.command("cls");
+        /* ESTE FUE MI ULTIMO INTENTO
+            System.out.print("\033[H\033[2J");
+            System.out.flush();
+        */
+
+        /* ESTE FUE MI SEGUNDO INTENTO
+            new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+            Nota: con este metodo hay que controlar la excepcion que tira start().
+        */
+
+        /*  ESTE FUE MI PRIMER INTENTO.
+        ProcessBuilder clearScreenProcess = new ProcessBuilder();
+            clearScreenProcess.command("cmd.exe", "/c","cls");
             clearScreenProcess.inheritIO();
             clearScreenProcess.start();
             clearScreenProcess.wait();
+        try {
+
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-
+        */
     }
     public void writeConsoleOutput() {
         for (int i = 0; i < this.screenBuffHeight ; i++) {
